@@ -31,7 +31,7 @@ function create_file_hash() {
     );
 }
 
-class HttpFilesParameterTest extends PHPUnit_Framework_TestCase
+class HttpFilesParameterTest extends \PHPUnit\Framework\TestCase
 {
     public function testFunc()
     {

@@ -1,7 +1,7 @@
 <?php
 use Universal\ClassLoader\MapClassLoader;
 
-class MapClassLoaderTest extends PHPUnit_Framework_TestCase
+class MapClassLoaderTest extends \PHPUnit\Framework\TestCase
 {
     public function testMapClassLoader()
     {

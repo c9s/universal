@@ -9,9 +9,9 @@
  *
  */
 namespace Universal\Event;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
-class PhpEventTest extends PHPUnit_Framework_TestCase 
+class PhpEventTest extends \PHPUnit\Framework\TestCase 
 {
     function test() 
     {

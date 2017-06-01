@@ -1,7 +1,7 @@
 <?php
 use Universal\ClassLoader\Psr4ClassLoader;
 
-class Psr4ClassLoaderTest extends PHPUnit_Framework_TestCase
+class Psr4ClassLoaderTest extends \PHPUnit\Framework\TestCase
 {
     public function testPsr4()
     {

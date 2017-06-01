@@ -4,10 +4,10 @@
 
 
 namespace Universal\Requirement;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Exception;
 
-class RequirementTest extends PHPUnit_Framework_TestCase
+class RequirementTest extends \PHPUnit\Framework\TestCase
 {
     function testFunc()
     {

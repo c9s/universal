@@ -1,6 +1,6 @@
 <?php
 
-class CookieTest extends PHPUnit_Framework_TestCase
+class CookieTest extends \PHPUnit\Framework\TestCase
 {
     function test()
     {

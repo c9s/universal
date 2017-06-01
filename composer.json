@@ -6,8 +6,7 @@
         "php": ">=5.3.0"
     },
     "require-dev": {
-        "corneltek/phpunit-testmore": "dev-master",
-        "satooshi/php-coveralls": "^1"
+        "corneltek/phpunit-testmore": "dev-master"
     },
     "license": "MIT",
     "authors": [

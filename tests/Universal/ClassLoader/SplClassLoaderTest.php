@@ -1,6 +1,6 @@
 <?php
 
-class SplClassLoaderTest extends PHPUnit_Framework_TestCase
+class SplClassLoaderTest extends \PHPUnit\Framework\TestCase
 {
     public function testAddPrefix()
     {

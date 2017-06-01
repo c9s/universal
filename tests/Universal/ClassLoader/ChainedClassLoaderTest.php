@@ -12,7 +12,7 @@ use Universal\ClassLoader\Psr0ClassLoader;
 use Universal\ClassLoader\Psr4ClassLoader;
 use Universal\ClassLoader\ChainedClassLoader;
 
-class ChainedClassLoaderTest extends PHPUnit_Framework_TestCase
+class ChainedClassLoaderTest extends \PHPUnit\Framework\TestCase
 {
     public function testChainedClassLoader()
     {
@@ -29,12 +29,9 @@ class ChainedClassLoaderTest extends PHPUnit_Framework_TestCase
         $this->assertFileExists($classPath);
 
         $classPath = $loader->resolveClass('Universal\\ClassLoader\\Psr0ClassLoader');
-        $this->assertEquals('src/Universal/ClassLoader/Psr0ClassLoader.php', $classPath);
+        $this->assertEquals('src/ClassLoader/Psr0ClassLoader.php', $classPath);
         $this->assertNotNull($classPath);
         $this->assertFileExists($classPath);
-
-
-
     }
 }
 

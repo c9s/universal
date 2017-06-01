@@ -21,7 +21,7 @@ class FooObjectBuilder
 
 use Universal\Container\ObjectContainer;
 
-class ObjectContainerTest extends PHPUnit_Framework_TestCase 
+class ObjectContainerTest extends \PHPUnit\Framework\TestCase 
 {
     public function testSingletonBuilder() 
     {
