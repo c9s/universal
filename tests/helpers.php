@@ -10,7 +10,7 @@
 if( ! defined('DEBUG_BACKTRACE_PROVIDE_OBJECT') )
     define( 'DEBUG_BACKTRACE_PROVIDE_OBJECT' , 1 );
 
-function ok( $v , $msg = null )
+function $this->assertTrue( $v , $msg = null )
 {
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
     $testobj = $stacks[1]['object'];

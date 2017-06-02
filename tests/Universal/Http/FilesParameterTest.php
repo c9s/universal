@@ -39,13 +39,13 @@ class HttpFilesParameterTest extends \PHPUnit\Framework\TestCase
         $files['uploaded'] = create_file_hash('tests/data/cat.txt');
 
         $req = new HttpRequest([], $files);
-        ok(isset($req->files['uploaded']), 'Got uploaded file field' );
+        $this->assertTrue(isset($req->files['uploaded']), 'Got uploaded file field' );
 
         $this->assertEquals(11, $req->files['uploaded']['size'] );
         $this->assertEquals( 'text/plain', $req->files['uploaded']['type'] );
         $this->assertEquals( 0, $req->files['uploaded']['error'] );
 
-        ok(isset($req->files['uploaded']));
+        $this->assertTrue(isset($req->files['uploaded']));
         $file = $req->files['uploaded'];
     }
 
@@ -58,9 +58,14 @@ class HttpFilesParameterTest extends \PHPUnit\Framework\TestCase
         );
 
         $req = new HttpRequest([], $files);
-        ok( is_array( $req->files['uploaded'] ) );
-        foreach( $req->files['uploaded'] as $f ) {
-            ok($f);
+        $this->assertTrue( is_array( $req->files['uploaded'] ) );
+
+        foreach ($req->files['uploaded'] as $f) {
+            $this->assertTrue(isset($f['name']));
+            $this->assertTrue(isset($f['tmp_name']));
+            $this->assertTrue(isset($f['size']));
+            $this->assertTrue(isset($f['type']));
+            $this->assertTrue(isset($f['error']));
         }
     }
 }
