@@ -1,4 +1,7 @@
+dist: trusty
+
 language: php
+
 services:
 - memcached
 - mongodb
