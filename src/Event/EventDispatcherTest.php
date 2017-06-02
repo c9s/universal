@@ -1,26 +1,23 @@
 <?php
-
-
-/*
- * This file is part of the {{ }} package.
+/**
+ * This file is part of the Universal package.
  *
- * (c) Yo-An Lin <cornelius.howl@gmail.com>
+ * (c) Yo-An Lin <yoanlin93@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  */
-
 namespace Universal\Event;
 
 use PHPUnit\Framework\TestCase;
 
-class PhpEventTest extends \PHPUnit\Framework\TestCase 
+class EventDispatcherTest extends \PHPUnit\Framework\TestCase 
 {
-    function test() 
+    public function testBasicUsage()
     {
         global $z;
-        $e = PhpEvent::getInstance();
+        $e = EventDispatcher::getInstance();
         $e->register( 'test', function($a,$b,$c) {
             global $z;
             $z = $a + $b + $c;

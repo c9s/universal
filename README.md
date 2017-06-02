@@ -3,7 +3,7 @@ Universal
 
 Universal is a general proprose PHP library.
 
-[![Build Status](https://travis-ci.org/corneltek/Universal.svg?branch=master)](https://travis-ci.org/corneltek/Universal)
+[![Build Status](https://travis-ci.org/c9s/universal.svg?branch=master)](https://travis-ci.org/c9s/universal)
 
 # Components
 
@@ -12,19 +12,6 @@ Universal is a general proprose PHP library.
 - HTTPRequest
 
 ## Classloader
-
-### SplClassLoader
-
-    use Universal\ClassLoader\SplClassLoader;
-    $loader = new \UniversalClassLoader\SplClassLoader( array(  
-            'Vendor\Onion' => 'path/to/Onion',
-            'Vendor\CLIFramework' => 'path/to/CLIFramework',
-    ));
-    $loader->addNamespace(array( 
-        'NS' => 'path'
-    ));
-    $loader->useIncludePath();
-    $loader->register();
 
 ### BasePathClassLoader
 
@@ -176,32 +163,14 @@ Session with memcache backend:
 
 ## Event
 
-    use Universal\Event\PhpEvent;
-    $e = PhpEvent::getInstance();
+    use Universal\Event\EventDispatcher;
+
+    $e = Event::getInstance();
 
     // register your handler
-    $e->register( 'test', function($a,$b,$c) {
+    $e->register('test', function($a, $b, $c) {
         // do what you want
-
     });
 
     // trigger event handlers
-    $e->trigger( 'test' , 1,2,3  );
-
-## Requirement Checker
-
-    try {
-        $require = new Universal\Requirement\Requirement;
-        $require->extensions( 'apc','mbstring' );
-        $require->classes( 'ClassName' , 'ClassName2' );
-        $require->functions( 'func1' , 'func2' , 'function3' )
-    }
-    catch( RequireExtensionException $e ) {
-
-    }
-    catch( RequireFunctionException $e ) {
-
-    }
-    catch( RequireClassException $e ) {
-
-    }
+    $e->trigger('test', 1,2,3);

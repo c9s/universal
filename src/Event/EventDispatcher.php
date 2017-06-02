@@ -17,14 +17,14 @@ namespace Universal\Event;
  * TODO: Move this PhpEvent to a standard-alone component.
  * TODO: implement an extension for this.
  */
-class PhpEvent
+class EventDispatcher
 {
     /**
      * Event pool
      *
      * @var array save event callbacks
      */
-    public $eventPool = array();
+    protected $eventPool = [];
 
     /**
      * Register event name
@@ -81,7 +81,6 @@ class PhpEvent
         return $results;
     }
 
-
     /**
      * clear event pool
      */
@@ -100,5 +99,4 @@ class PhpEvent
         static $instance;
         return $instance ? $instance : $instance = new static;
     }
-
 }
