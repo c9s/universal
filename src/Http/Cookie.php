@@ -32,10 +32,12 @@ class Cookie
      *                   [, bool $secure = false 
      *                   [, bool $httponly = false ]]]]]] )
      */
-    public function __construct($options = array() ) {
-        foreach( array('expire','path','domain','secure','httponly') as $k ) {
-            if( isset($options[$k]) )
+    public function __construct(array $options = array())
+    {
+        foreach(array('expire','path','domain','secure','httponly') as $k) {
+            if (isset($options[$k])) {
                 $this->$k = $options[$k];
+            }
         }
     }
 
@@ -50,9 +52,9 @@ class Cookie
     public function setSecure($secure) { $this->secure = $secure; }
 
 
-
-    public function calculateExpireTime($expire) {
-        if( is_string($expire) ) {
+    protected function resolveExpireTime($expire)
+    {
+        if (is_string($expire)) {
             // parse from pretty date string
             if( preg_match('#(\d+)\s+(days?|hours?|minutes?|seconds?)#',$expire,$regs) ) {
                 $num = (int) $regs[1];
@@ -81,8 +83,7 @@ class Cookie
             } else {
                 throw new \Exception('Unknown expire format');
             }
-        }
-        elseif( $expire < 0 || $expire > 1000000000 ) {
+        } else if ($expire < 0) {
             // expired at (expire time)
             return $expire;
         }
@@ -111,8 +112,9 @@ class Cookie
      * @param string|integer $expire
      *
      */
-    public function setExpire($expire) { 
-        $this->expire = $this->calculateExpireTime($expire);
+    public function setExpire($expire)
+    { 
+        $this->expire = $this->resolveExpireTime($expire);
     }
 
     public function setDomain($domain) { 
@@ -129,7 +131,7 @@ class Cookie
         // build setcookie arguments
         $args = array($name,$value);
         if( $expire !== null || $this->expire ) {
-            $args[] = $expire ? $this->calculateExpireTime($expire) : $this->expire;
+            $args[] = $expire ? $this->resolveExpireTime($expire) : $this->expire;
             if( $path || $this->path ) {
                 $args[] = $path ? $path : $this->path;
                 if( $this->domain ) {
