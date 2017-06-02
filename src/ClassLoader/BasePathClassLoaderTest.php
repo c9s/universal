@@ -5,7 +5,7 @@ namespace Universal\ClassLoader;
 use PHPUnit\Framework\TestCase;
 use Exception;
 
-class BasePathClassLoaderTest extends \PHPUnit\Framework\TestCase
+class BasePathClassLoaderTest extends TestCase
 {
     function testFunc()
     {
