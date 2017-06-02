@@ -1,5 +1,6 @@
 <?php
-use Universal\Http\UploadedFile;
+
+namespace Universal\Http;
 
 class UploadedFileTest extends \PHPUnit\Framework\TestCase
 {
@@ -51,7 +52,7 @@ class UploadedFileTest extends \PHPUnit\Framework\TestCase
         );
         $file = UploadedFile::createFromArray($filestash);
         $this->assertNotNull($file);
-        $this->assertInstanceOf('Universal\Http\UploadedFile', $file);
+        $this->assertInstanceOf(UploadedFile::class, $file);
         $ret = $file->moveTo('tests', true);
         $this->assertEquals('tests/filename.txt', $ret);
     }
@@ -74,7 +75,7 @@ class UploadedFileTest extends \PHPUnit\Framework\TestCase
         );
         $file = UploadedFile::createFromArray($filestash);
         $this->assertNotNull($file);
-        $this->assertInstanceOf('Universal\Http\UploadedFile', $file);
+        $this->assertInstanceOf(UploadedFile::class, $file);
         $file->moveTo('tests');
     }
 
@@ -96,7 +97,7 @@ class UploadedFileTest extends \PHPUnit\Framework\TestCase
         );
         $file = UploadedFile::createFromArray($filestash);
         $this->assertNotNull($file);
-        $this->assertInstanceOf('Universal\Http\UploadedFile', $file);
+        $this->assertInstanceOf(UploadedFile::class, $file);
         $file->moveTo('tests');
     }
 }

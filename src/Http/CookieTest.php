@@ -1,11 +1,14 @@
 <?php
 
+namespace Universal\Http;
+
 class CookieTest extends \PHPUnit\Framework\TestCase
 {
-    function test()
+    public function testSet()
     {
-        $cookie = new Universal\Http\Cookie;
+        $cookie = new Cookie;
         $cookie->set('test','test');
+        // $this->assertEquals('test', $cookie->get('test'));
     }
 }
 

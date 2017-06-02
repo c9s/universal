@@ -1,4 +1,8 @@
 <?php
+
+namespace Universal\Container;
+
+
 /*
  * This file is part of the {{ }} package.
  *

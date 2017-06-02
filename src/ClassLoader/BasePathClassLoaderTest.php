@@ -1,6 +1,7 @@
 <?php
 
 namespace Universal\ClassLoader;
+
 use PHPUnit\Framework\TestCase;
 use Exception;
 

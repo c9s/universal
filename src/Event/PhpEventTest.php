@@ -1,4 +1,6 @@
 <?php
+
+
 /*
  * This file is part of the {{ }} package.
  *
@@ -8,7 +10,9 @@
  * file that was distributed with this source code.
  *
  */
+
 namespace Universal\Event;
+
 use PHPUnit\Framework\TestCase;
 
 class PhpEventTest extends \PHPUnit\Framework\TestCase 

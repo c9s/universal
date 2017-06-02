@@ -1,5 +1,6 @@
 <?php
-use Universal\ClassLoader\MapClassLoader;
+
+namespace Universal\ClassLoader;
 
 class MapClassLoaderTest extends \PHPUnit\Framework\TestCase
 {

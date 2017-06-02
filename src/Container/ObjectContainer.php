@@ -1,4 +1,6 @@
 <?php
+
+
 /*
  * This file is part of the Universal package.
  *
@@ -8,7 +10,9 @@
  * file that was distributed with this source code.
  *
  */
+
 namespace Universal\Container;
+
 use Exception;
 
 class ObjectContainerException extends Exception {  }
@@ -147,5 +151,4 @@ class ObjectContainer
     {
         return $this->hasBuilder($key);
     }
-
 }

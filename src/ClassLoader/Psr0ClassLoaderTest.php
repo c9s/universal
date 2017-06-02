@@ -1,6 +1,6 @@
 <?php
 
-use Universal\ClassLoader\Psr0ClassLoader;
+namespace Universal\ClassLoader;
 
 class Psr0ClassLoaderTest extends \PHPUnit\Framework\TestCase
 {

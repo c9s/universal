@@ -1,9 +1,12 @@
 <?php
+
 namespace Universal\FileSystem;
+
 use RecursiveIteratorIterator;
 use RecursiveDirectoryIterator;
 
-class PathUtils {
+class PathUtils
+{
 
     static function path_join($list)
     {

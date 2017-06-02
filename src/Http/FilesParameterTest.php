@@ -1,5 +1,8 @@
 <?php 
-use Universal\Http\HttpRequest;
+
+namespace Universal\Http;
+
+use finfo;
 
 function create_file_hash() {
     if( ! extension_loaded('Fileinfo') ) {

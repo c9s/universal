@@ -124,7 +124,7 @@ class Cookie
         setcookie($name, NULL, -1);
     }
 
-    public function set($name,$value, $expire = null , $path = null)
+    public function set($name, $value, $expire = null, $path = null)
     {
         // build setcookie arguments
         $args = array($name,$value);
@@ -139,6 +139,7 @@ class Cookie
                 }
             }
         }
+
         // setcookie( $name, $value , $this->expire , $this->path , $this->domain, $this->secure, $this->httponly );
         return @call_user_func_array('setcookie',$args);
     }
@@ -148,12 +149,14 @@ class Cookie
         return $this->set($name,$value);
     }
 
-    public function __get($name) {
+    public function __get($name)
+    {
         return $this->get($name);
     }
 
-    public function get($name) {
-        if( isset($_COOKIE[$name]) ) {
+    public function get($name)
+    {
+        if (isset($_COOKIE[$name])) {
             return $_COOKIE[$name];
         }
     }

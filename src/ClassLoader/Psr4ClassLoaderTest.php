@@ -1,5 +1,6 @@
 <?php
-use Universal\ClassLoader\Psr4ClassLoader;
+
+namespace Universal\ClassLoader;
 
 class Psr4ClassLoaderTest extends \PHPUnit\Framework\TestCase
 {
@@ -12,4 +13,3 @@ class Psr4ClassLoaderTest extends \PHPUnit\Framework\TestCase
         $this->assertFileExists($classPath);
     }
 }
-
