@@ -30,7 +30,7 @@ class ObjectContainerTest extends \PHPUnit\Framework\TestCase
             return new \stdClass;
         };
         ok( $container->std );
-        is( $container->std , $container->std );
+        $this->assertEquals( $container->std , $container->std );
     }
 
     public function testFactoryBuilder()
@@ -45,8 +45,8 @@ class ObjectContainerTest extends \PHPUnit\Framework\TestCase
         $b = $container->getObject('std',array(2));
         ok($b);
 
-        is(1,$a);
-        is(2,$b);
+        $this->assertEquals(1,$a);
+        $this->assertEquals(2,$b);
     }
 
     public function testCallableObject()
@@ -54,9 +54,9 @@ class ObjectContainerTest extends \PHPUnit\Framework\TestCase
         $container = new ObjectContainer;
         $container->registerFactory('foo', new FooObjectBuilder);
         $foo = $container->getObject('foo');
-        is('foo1',$foo);
-        is('foo2',$container->foo);
-        is('foo3',$container->foo);
+        $this->assertEquals('foo1',$foo);
+        $this->assertEquals('foo2',$container->foo);
+        $this->assertEquals('foo3',$container->foo);
     }
 }
 

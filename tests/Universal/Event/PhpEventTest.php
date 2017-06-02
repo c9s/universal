@@ -22,7 +22,7 @@ class PhpEventTest extends \PHPUnit\Framework\TestCase
             $z = $a + $b + $c;
         });
         $e->trigger( 'test' , 1,2,3  );
-        is( 6, $z );
+        $this->assertEquals( 6, $z );
     }
 }
 

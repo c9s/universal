@@ -26,7 +26,7 @@ function not_ok( $v , $msg = null )
     return $v ? true : false;
 }
 
-function is( $expected , $v , $msg = null )
+function $this->assertEquals( $expected , $v , $msg = null )
 {
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
     $testobj = $stacks[1]['object'];

@@ -41,9 +41,9 @@ class HttpFilesParameterTest extends \PHPUnit\Framework\TestCase
         $req = new HttpRequest([], $files);
         ok(isset($req->files['uploaded']), 'Got uploaded file field' );
 
-        is(11, $req->files['uploaded']['size'] );
-        is( 'text/plain', $req->files['uploaded']['type'] );
-        is( 0, $req->files['uploaded']['error'] );
+        $this->assertEquals(11, $req->files['uploaded']['size'] );
+        $this->assertEquals( 'text/plain', $req->files['uploaded']['type'] );
+        $this->assertEquals( 0, $req->files['uploaded']['error'] );
 
         ok(isset($req->files['uploaded']));
         $file = $req->files['uploaded'];

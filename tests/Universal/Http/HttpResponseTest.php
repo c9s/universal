@@ -11,7 +11,7 @@ class HttpResponseTest extends \PHPUnit\Framework\TestCase
         $response->body('Hello World');
 
         $body = $response->finalize();
-        is( 'Hello World', $body );
+        $this->assertEquals( 'Hello World', $body );
     }
 }
 
