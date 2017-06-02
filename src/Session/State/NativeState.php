@@ -16,9 +16,13 @@ class NativeState
         }
     }
 
-    public function setCookieParams($seconds)
+    /**
+     * Call session_set_cookie_params to set the cookie parameters.
+     */
+    public function setCookieParams(array $config)
     {
-        session_set_cookie_params($seconds);
+        // void session_set_cookie_params ( int $lifetime [, string $path [, string $domain [, bool $secure = false [, bool $httponly = false ]]]] )
+        session_set_cookie_params(@$config['expire'], @$config['path'], @$config['domain'], @$config['secure'], @$config['httponly']);
     }
 
     public function getSid()
