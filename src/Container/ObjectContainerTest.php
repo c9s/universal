@@ -40,7 +40,7 @@ class ObjectContainerTest extends \PHPUnit\Framework\TestCase
     public function testFactoryBuilder()
     {
         $container = new ObjectContainer;
-        $container->registerFactory('std',function($args) { 
+        $container->factory('std',function($args) { 
             return $args;
         });
         $a = $container->getObject('std',[1]);
@@ -53,7 +53,7 @@ class ObjectContainerTest extends \PHPUnit\Framework\TestCase
     public function testCallableObject()
     {
         $container = new ObjectContainer;
-        $container->registerFactory('foo', new FooObjectBuilder);
+        $container->factory('foo', new FooObjectBuilder);
         $foo = $container->getObject('foo');
         $this->assertEquals('foo1',$foo);
         $this->assertEquals('foo2',$container->foo);
