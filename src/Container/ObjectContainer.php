@@ -36,7 +36,6 @@ class ObjectContainer
         return isset($this->_builders[ $key ]);
     }
 
-
     /**
      * Get object instance or build a new object instance.
      *
@@ -110,6 +109,10 @@ class ObjectContainer
         }
     }
 
+    public function singleton($key, $builder)
+    {
+        $this->_builders[$key] = ['singleton' => true, 'builder' => $builder];
+    }
 
     /**
      * Set object builder
@@ -117,12 +120,12 @@ class ObjectContainer
      * @param string $key
      * @param closure $builder
      */
-    public function setBuilder($key,$builder,$singleton = true)
+    protected function setBuilder($key, $builder, $singleton = true)
     {
-        $this->_builders[ $key ] = array( 
+        $this->_builders[ $key ] = [
             'singleton' => $singleton,
             'builder' => $builder,
-        );
+        ];
     }
 
 
