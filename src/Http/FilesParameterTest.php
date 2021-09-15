@@ -34,7 +34,7 @@ function create_file_hash() {
     );
 }
 
-class HttpFilesParameterTest extends \PHPUnit\Framework\TestCase
+class FilesParameterTest extends \PHPUnit\Framework\TestCase
 {
     public function testFunc()
     {
