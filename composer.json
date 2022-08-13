@@ -3,7 +3,7 @@
     "homepage": "http://github.com/c9s/universal",
     "description": "Universal library for PHP",
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=7.0"
     },
     "replace": {
         "corneltek/universal": "*"
@@ -17,6 +17,5 @@
         "psr-4": {
             "Universal\\": "src/"
         }
-    },
-    "extra": { "branch-alias": { "dev-master": "2.0.x-dev" } }
+    }
 }
