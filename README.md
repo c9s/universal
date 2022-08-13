@@ -9,7 +9,7 @@ Universal is a general proprose PHP library.
 # Install
 
 ```sh
-composer require universal/universal 2.0.x-dev
+composer require universal/universal ^2.1
 ```
 
 # Components
